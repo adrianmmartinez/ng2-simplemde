@@ -38,7 +38,7 @@ export class Simplemde extends NgModelBase implements AfterViewInit, OnDestroy {
   @ViewChild('simplemde') textarea: ElementRef
   @Input() options: SimpleMDE.Options = {}
   @Input() codemirror: any = {}
-  data: string;
+  data: string
 
   private simplemde: SimpleMDE
   private tmpValue = null
@@ -56,7 +56,7 @@ export class Simplemde extends NgModelBase implements AfterViewInit, OnDestroy {
   }
 
   updateValue(evt) {
-    console.log('textarea data', this.data);
+    console.log('textarea data', this.data)
     this.writeValue(this.data)
   }
 
