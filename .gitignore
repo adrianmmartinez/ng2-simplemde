@@ -1,6 +1,5 @@
 .DS_Store
 
 bundles/
-lib/
 node_modules/
 .idea/
