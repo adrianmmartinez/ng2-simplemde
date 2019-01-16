@@ -28,7 +28,7 @@ const SIMPLEMDE_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   selector: 'simplemde',
   template: `
-    <textarea #simplemde></textarea>
+    <textarea [ngModel]='data' (ngModelChange)="updateValue($event)" #simplemde></textarea>
   `,
   providers: [
     SIMPLEMDE_CONTROL_VALUE_ACCESSOR
@@ -38,6 +38,7 @@ export class Simplemde extends NgModelBase implements AfterViewInit, OnDestroy {
   @ViewChild('simplemde') textarea: ElementRef
   @Input() options: SimpleMDE.Options = {}
   @Input() codemirror: any = {}
+  data: string;
 
   private simplemde: SimpleMDE
   private tmpValue = null
@@ -52,6 +53,11 @@ export class Simplemde extends NgModelBase implements AfterViewInit, OnDestroy {
         this.tmpValue = this.value
       }
     }
+  }
+
+  updateValue(evt) {
+    console.log('textarea data', this.data);
+    this.writeValue(this.data)
   }
 
   ngAfterViewInit() {
