@@ -91,7 +91,9 @@ export class Simplemde extends NgModelBase implements AfterViewInit, OnDestroy {
     @Inject(SIMPLEMDE_CONFIG) private config
   ) {
     super()
+    this.data = this.textarea.nativeElement.value
   }
+
 
 }
 
