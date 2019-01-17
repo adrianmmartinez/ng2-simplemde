@@ -6,7 +6,7 @@ export declare class Simplemde extends NgModelBase implements AfterViewInit, OnD
     textarea: ElementRef;
     options: SimpleMDE.Options;
     codemirror: any;
-    data: string;
+    data: any;
     private simplemde;
     private tmpValue;
     writeValue(v: any): void;
